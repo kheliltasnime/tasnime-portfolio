@@ -12,17 +12,17 @@
 <script>
   emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
 
-  document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    emailjs.sendForm('service_aoc0dbi', 'template_contact', this)
-      .then(() => {
-        alert('Message envoyé avec succès !');
-        this.reset(); // réinitialise le formulaire
-      })
-      .catch(() => {
-        alert('Erreur lors de l’envoi, réessayez.');
-      });
-  });
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  emailjs.sendForm('service_aoc0dbi', 'template_contact', this)
+    .then(function() {
+      alert('Message envoyé !');
+    }, function(error) {
+      alert('Erreur : ' + JSON.stringify(error));
+    });
+});
+
 </script>
 
 <body>
@@ -551,21 +551,14 @@ function closeModal(id) {
           </div>
         </div>
 
-       <form class="contact-form">
-  <div class="form-group">
-    <input type="text" name="from_name" placeholder="Votre nom" required>
-  </div>
-  <div class="form-group">
-    <input type="email" name="from_email" placeholder="Votre email" required>
-  </div>
-  <div class="form-group">
-    <input type="text" name="subject" placeholder="Sujet">
-  </div>
-  <div class="form-group">
-    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+       <form id="contact-form">
+  <input type="text" name="name" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <input type="text" name="subject" placeholder="Sujet" />
+  <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+  <button type="submit">Envoyer</button>
 </form>
+
 
       </div>
     </div>
