@@ -10,7 +10,34 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
- 
+ // Initialiser EmailJS
+emailjs.init("TON_PUBLIC_KEY"); 
+
+// Gestion du formulaire
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value || "Sans sujet";
+  const message = document.getElementById("message").value;
+
+  emailjs.send("TON_SERVICE_ID", "TON_TEMPLATE_ID", {
+    title: subject,
+    name: name,
+    message: message,
+    from_name: name,
+    from_email: email,
+  })
+  .then(() => {
+    alert("✅ Message envoyé avec succès !");
+    document.getElementById("contact-form").reset();
+  })
+  .catch(() => {
+    alert("❌ Erreur lors de l’envoi, réessayez.");
+  });
+});
+
 </script>
 
 <body>
@@ -505,60 +532,52 @@ function closeModal(id) {
 }
 </style>
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2 class="section-title">Me Contacter</h2>
-    <div class="contact-content">
-      <div class="contact-info">
-        <h3>Travaillons ensemble</h3>
-        <p>Je suis toujours intéressée par de nouveaux projets et opportunités. N'hésitez pas à me contacter !</p>
-      </div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Me Contacter</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Travaillons ensemble</h3>
+          <p>Je suis toujours intéressée par de nouveaux projets et opportunités. N'hésitez pas à me contacter !</p>
 
-      <!-- FORMULAIRE -->
-     <form id="contact-form">
-  <input type="text" name="name" placeholder="Votre nom" required>
-  <input type="email" name="from_email" placeholder="Votre email" required>
-  <input type="text" name="title" placeholder="Sujet">
-  <textarea name="message" placeholder="Votre message"></textarea>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>tasnime.khelil@etudiant-isi.utm.tn</p>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-icon">🔗</div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/tasnime-khelli-80717b185</p>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-icon">📍</div>
+              <div>
+                <h4>Localisation</h4>
+                <p>Tunis, Tunisie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <form id="contact-form">
+  <input type="text" id="name" name="name" placeholder="Votre nom" required>
+  <input type="email" id="email" name="from_email" placeholder="Votre email" required>
+  <input type="text" id="subject" name="title" placeholder="Sujet">
+  <textarea id="message" name="message" placeholder="Votre message"></textarea>
   <button type="submit">Envoyer</button>
 </form>
 
+
+      </div>
     </div>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  // Initialiser EmailJS
-  emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ remplace par ta clé publique
-
-  // Gestion du formulaire
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value || "Sans sujet";
-    const message = document.getElementById("message").value;
-
-    emailjs.send("service_aoc0dbi", "template_s8xk64r", {
-      title: subject,
-      name: name,
-      message: message,
-      from_name: name,
-      from_email: email,
-    })
-    .then(() => {
-      alert("✅ Message envoyé avec succès !");
-      document.getElementById("contact-form").reset();
-    })
-    .catch(() => {
-      alert("❌ Erreur lors de l’envoi, réessayez.");
-    });
-  });
-</script>
-
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
