@@ -10,35 +10,33 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
- // Initialiser EmailJS
-emailjs.init("TON_PUBLIC_KEY"); 
+  emailjs.init("G3HpHKXPQDvpbz-KQ");
 
-// Gestion du formulaire
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value || "Sans sujet";
-  const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value || "Sans sujet";
+    const message = document.getElementById("message").value;
 
-  emailjs.send("TON_SERVICE_ID", "TON_TEMPLATE_ID", {
-    title: subject,
-    name: name,
-    message: message,
-    from_name: name,
-    from_email: email,
-  })
-  .then(() => {
-    alert("✅ Message envoyé avec succès !");
-    document.getElementById("contact-form").reset();
-  })
-  .catch(() => {
-    alert("❌ Erreur lors de l’envoi, réessayez.");
+    emailjs.send("TON_SERVICE_ID", "TON_TEMPLATE_ID", {
+      title: subject,
+      name: name,
+      message: message,
+      from_name: name,
+      from_email: email,
+    })
+    .then(() => {
+      alert("✅ Message envoyé avec succès !");
+      document.getElementById("contact-form").reset();
+    })
+    .catch(() => {
+      alert("❌ Erreur lors de l’envoi, réessayez.");
+    });
   });
-});
-
 </script>
+
 
 <body>
  <!-- Navigation -->
