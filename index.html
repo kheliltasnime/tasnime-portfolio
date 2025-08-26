@@ -12,7 +12,17 @@
 <script>
   emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
 
-  
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    emailjs.sendForm('service_aoc0dbi', 'template_contact', this)
+      .then(() => {
+        alert('Message envoyé avec succès !');
+        this.reset(); // réinitialise le formulaire
+      })
+      .catch(() => {
+        alert('Erreur lors de l’envoi, réessayez.');
+      });
+  });
 </script>
 
 <body>
@@ -541,23 +551,21 @@ function closeModal(id) {
           </div>
         </div>
 
-      <!-- ✅ Formspree Contact Form -->
-      <form id="contact-form" action="https://formspree.io/f/xandynlg" method="POST" class="contact-form">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Votre nom" required>
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Votre email" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="subject" placeholder="Sujet">
-        </div>
-        <div class="form-group">
-          <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Envoyer le message</button>
-        <p id="form-status" class="form-status"></p>
-      </form>
+       <form class="contact-form">
+  <div class="form-group">
+    <input type="text" name="from_name" placeholder="Votre nom" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="from_email" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <input type="text" name="subject" placeholder="Sujet">
+  </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+</form>
 
       </div>
     </div>
