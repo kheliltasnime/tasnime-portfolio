@@ -84,25 +84,21 @@ document.querySelectorAll('.timeline-item, .project-card, .skill-item').forEach(
 
 // Form submission
 const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
+    // Get form data
+    const formData = new FormData(contactForm);
     const name = contactForm.querySelector('input[type="text"]').value;
     const email = contactForm.querySelector('input[type="email"]').value;
-    const subject = contactForm.querySelectorAll('input[type="text"]')[1]?.value || "";
+    const subject = contactForm.querySelectorAll('input[type="text"]')[1].value;
     const message = contactForm.querySelector('textarea').value;
-
+    
+    // Simple validation
     if (!name || !email || !message) {
-      alert('Veuillez remplir tous les champs obligatoires.');
-      return;
+        alert('Veuillez remplir tous les champs obligatoires.');
+        return;
     }
-
-    console.log("Formulaire envoyé !");
-  });
-}
-
     
     // Simulate form submission
     const submitBtn = contactForm.querySelector('.btn');
