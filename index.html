@@ -7,50 +7,59 @@
   <title>Portfolio de Tasnime Khelil</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    // Initialisation d'EmailJS
-    (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre clé publique EmailJS
-    })();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-
 
 <body>
  <!-- Navigation -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">
-      <h2>Portfolio</h2>
+      <h2 data-translate="portfolio">Portfolio</h2>
     </div>
     <ul class="nav-menu">
       <li class="nav-item">
-        <a href="#home" class="nav-link">Accueil</a>
+        <a href="#home" class="nav-link" data-translate="nav-home">Accueil</a>
       </li>
       <li class="nav-item">
-        <a href="#about" class="nav-link">À propos</a>
+        <a href="#about" class="nav-link" data-translate="nav-about">À propos</a>
       </li>
       <li class="nav-item">
-        <a href="#skills" class="nav-link">Compétences</a>
+        <a href="#skills" class="nav-link" data-translate="nav-skills">Compétences</a>
       </li>
       <li class="nav-item">
-        <a href="#experience" class="nav-link">Expérience</a>
+        <a href="#experience" class="nav-link" data-translate="nav-experience">Expérience</a>
       </li>
       <li class="nav-item">
-        <a href="#education" class="nav-link">Formation</a>
-      </li>
-      <!-- ✅ Nouveau lien Services -->
-      <li class="nav-item">
-        <a href="#services" class="nav-link">Services</a>
+        <a href="#education" class="nav-link" data-translate="nav-education">Formation</a>
       </li>
       <li class="nav-item">
-        <a href="#projects" class="nav-link">Projets</a>
+        <a href="#services" class="nav-link" data-translate="nav-services">Services</a>
       </li>
       <li class="nav-item">
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#projects" class="nav-link" data-translate="nav-projects">Projets</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link" data-translate="nav-contact">Contact</a>
       </li>
     </ul>
+    
+    <!-- Theme and Language Controls -->
+    <div class="nav-controls">
+      <button id="themeToggle" class="control-btn" title="Changer le thème">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="sun-icon">
+          <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="moon-icon" style="display: none;">
+          <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+        </svg>
+      </button>
+      
+      <button id="langToggle" class="control-btn" title="Change language">
+        <span class="lang-text">EN</span>
+      </button>
+    </div>
+    
     <div class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -59,25 +68,24 @@
   </div>
 </nav>
 
-
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Salut, je suis <span class="highlight">Tasnime Khelil</span>
+          <span data-translate="hero-greeting">Salut, je suis</span> <span class="highlight">Tasnime Khelil</span>
         </h1>
-        <p class="hero-description">
+        <p class="hero-description" data-translate="hero-description">
           Étudiante en ingénierie logicielle | Développeuse d'applications web | Passionnée par l'IA
         </p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-          <a href="#contact" class="btn btn-secondary">Me contacter</a>
+          <a href="#projects" class="btn btn-primary" data-translate="hero-btn-projects">Voir mes projets</a>
+          <a href="#contact" class="btn btn-secondary" data-translate="hero-btn-contact">Me contacter</a>
         </div>
 
         <!-- Social Links -->
         <div class="hero-social">
-          <p class="social-label">Suivez-moi :</p>
+          <p class="social-label" data-translate="social-follow">Suivez-moi :</p>
           <div class="social-buttons">
             <a href="https://github.com/kheliltasnime" target="_blank" class="social-btn github">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -98,9 +106,8 @@
       </div>
       <div class="hero-image">
        <div class="profile-card">
-  <img src="phototas.jpg" alt="Tasnime Khelil" class="profile-img">
+  <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=300&h=300&fit=crop&q=80" alt="Tasnime Khelil" class="profile-img">
 </div>
-
       </div>
     </div>
   </section>
@@ -108,69 +115,69 @@
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">À propos de moi</h2>
+      <h2 class="section-title" data-translate="about-title">À propos de moi</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>
+          <p data-translate="about-text-1">
   Étudiante en ingénierie logicielle, je mets en pratique ma solide formation technique à travers des projets 
   concrets mêlant <strong>développement web</strong>, <strong>automatisation avec n8n</strong> et 
-  <strong>intégration d’API</strong>. Je suis passionnée par l’<strong>intelligence artificielle</strong> et 
+  <strong>intégration d'API</strong>. Je suis passionnée par l'<strong>intelligence artificielle</strong> et 
   son pouvoir de transformer des idées ambitieuses en solutions réelles, innovantes et utiles.
 </p>
-<p>
-  J’aime relever des défis complexes en les traduisant en solutions <strong>intelligentes, évolutives et centrées 
-  sur l’utilisateur</strong>. Mes expériences académiques et personnelles me permettent d’explorer aussi bien 
-  l’IA que l’architecture logicielle moderne et les environnements cloud, afin de concevoir des systèmes à la fois 
+<p data-translate="about-text-2">
+  J'aime relever des défis complexes en les traduisant en solutions <strong>intelligentes, évolutives et centrées 
+  sur l'utilisateur</strong>. Mes expériences académiques et personnelles me permettent d'explorer aussi bien 
+  l'IA que l'architecture logicielle moderne et les environnements cloud, afin de concevoir des systèmes à la fois 
   efficaces et impactants.
 </p>
-
         </div>
-<div class="skills-grid" id="skills">
-  <div class="skill-item">
-    <div class="skill-icon">💻</div>
-    <h3>Développement Web</h3>
-    <p>Java, Spring Boot, Angular, JavaScript/TypeScript, applications interactives</p>
-  </div>
+        <div class="skills-grid" id="skills">
+          <div class="skill-item">
+            <div class="skill-icon">💻</div>
+            <h3 data-translate="skill-web-title">Développement Web</h3>
+            <p data-translate="skill-web-desc">Java, Spring Boot, Angular, JavaScript/TypeScript, applications interactives</p>
+          </div>
 
-  <div class="skill-item">
-    <div class="skill-icon">⚡</div>
-    <h3>Automatisation & Intégration</h3>
-    <p>n8n, création de workflows intelligents, intégration d’API et optimisation de processus</p>
-  </div>
+          <div class="skill-item">
+            <div class="skill-icon">⚡</div>
+            <h3 data-translate="skill-automation-title">Automatisation & Intégration</h3>
+            <p data-translate="skill-automation-desc">n8n, création de workflows intelligents, intégration d'API et optimisation de processus</p>
+          </div>
 
-  <div class="skill-item">
-    <div class="skill-icon">🤖</div>
-    <h3>Intelligence Artificielle & Data</h3>
-    <p>Python, Pandas, NumPy, Scikit-learn, analyse et exploitation de données</p>
-  </div>
+          <div class="skill-item">
+            <div class="skill-icon">🤖</div>
+            <h3 data-translate="skill-ai-title">Intelligence Artificielle & Data</h3>
+            <p data-translate="skill-ai-desc">Python, Pandas, NumPy, Scikit-learn, analyse et exploitation de données</p>
+          </div>
 
-  <div class="skill-item">
-    <div class="skill-icon">🗄️</div>
-    <h3>Bases de Données</h3>
-    <p>PostgreSQL, SQL, modélisation relationnelle & NoSQL (MongoDB)</p>
-  </div>
+          <div class="skill-item">
+            <div class="skill-icon">🗄️</div>
+            <h3 data-translate="skill-db-title">Bases de Données</h3>
+            <p data-translate="skill-db-desc">PostgreSQL, SQL, modélisation relationnelle & NoSQL (MongoDB)</p>
+          </div>
 
-  <div class="skill-item">
-    <div class="skill-icon">☁️</div>
-    <h3>Cloud & DevOps</h3>
-    <p>Render, Docker, déploiement d’applications et gestion d’infrastructures</p>
-  </div>
-</div>
-
+          <div class="skill-item">
+            <div class="skill-icon">☁️</div>
+            <h3 data-translate="skill-cloud-title">Cloud & DevOps</h3>
+            <p data-translate="skill-cloud-desc">Render, Docker, déploiement d'applications et gestion d'infrastructures</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience" class="experience">
     <div class="container">
-      <h2 class="section-title">Mon Expérience</h2>
+      <h2 class="section-title" data-translate="experience-title">Mon Expérience</h2>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Fév 2024 - Mai 2024</div>
-            <h3>Développeuse Full-Stack</h3>
-            <h4>TEAMDEV, Sousse, Tunisie</h4>
-            <p>Contribution au développement d'une application web de gestion d'équipements et de salles au sein d'une
+            <div class="timeline-date" data-translate="exp1-date">Fév 2024 - Mai 2024</div>
+            <h3 data-translate="exp1-role">Développeuse Full-Stack</h3>
+            <h4 data-translate="exp1-company">TEAMDEV, Sousse, Tunisie</h4>
+            <p data-translate="exp1-desc">Contribution au développement d'une application web de gestion d'équipements et de salles au sein d'une
               institution.</p>
             <div class="timeline-tags">
               <span class="tag">Java/Spring Boot</span>
@@ -184,22 +191,21 @@
        <div class="timeline-item">
   <div class="timeline-marker"></div>
   <div class="timeline-content">
-    <div class="timeline-date">Juin 2023 - Juil 2023</div>
-    <h3>Stagiaire en Informatique</h3>
-    <h4>ICeM.tn | Industrielle du Câblage et du Montage, Tunisie</h4>
-    <p>
-      Participation active au développement d’une <strong>application web interne</strong> optimisant la gestion et 
-      le suivi des stocks de câbles. J’ai contribué à transformer un processus manuel en une solution numérique 
-      plus <strong>rapide, fiable et collaborative</strong>, améliorant ainsi la productivité de l’équipe.
+    <div class="timeline-date" data-translate="exp2-date">Juin 2023 - Juil 2023</div>
+    <h3 data-translate="exp2-role">Stagiaire en Informatique</h3>
+    <h4 data-translate="exp2-company">ICeM.tn | Industrielle du Câblage et du Montage, Tunisie</h4>
+    <p data-translate="exp2-desc">
+      Participation active au développement d'une <strong>application web interne</strong> optimisant la gestion et 
+      le suivi des stocks de câbles. J'ai contribué à transformer un processus manuel en une solution numérique 
+      plus <strong>rapide, fiable et collaborative</strong>, améliorant ainsi la productivité de l'équipe.
     </p>
     <div class="timeline-tags">
-      <span class="tag">Développement Web</span>
-      <span class="tag">Optimisation de processus</span>
-      <span class="tag">Collaboration</span>
+      <span class="tag" data-translate="tag-web-dev">Développement Web</span>
+      <span class="tag" data-translate="tag-optimization">Optimisation de processus</span>
+      <span class="tag" data-translate="tag-collaboration">Collaboration</span>
     </div>
   </div>
 </div>
-
       </div>
     </div>
   </section>
@@ -207,18 +213,17 @@
   <!-- Education Section -->
 <section id="education" class="education">
   <div class="container">
-    <h2 class="section-title">Formation</h2>
+    <h2 class="section-title" data-translate="education-title">Formation</h2>
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-date">2024 - 2027 (Prévu)</div>
-          <h3>Ingénierie en Développement Logiciel</h3>
-          <h4>Higher Institute of Computer Science (ISI) - Tunisie</h4>
-          <p>
-            Formation d’ingénieure orientée vers la <strong>conception d’architectures logicielles modernes</strong>, 
-            le <strong>cloud computing</strong>, et l’<strong>intelligence artificielle</strong>. 
+          <div class="timeline-date" data-translate="edu1-date">2024 - 2027 (Prévu)</div>
+          <h3 data-translate="edu1-degree">Ingénierie en Développement Logiciel</h3>
+          <h4 data-translate="edu1-school">Higher Institute of Computer Science (ISI) - Tunisie</h4>
+          <p data-translate="edu1-desc">
+            Formation d'ingénieure orientée vers la <strong>conception d'architectures logicielles modernes</strong>, 
+            le <strong>cloud computing</strong>, et l'<strong>intelligence artificielle</strong>. 
             Développement de projets collaboratifs intégrant innovation et résolution de problèmes concrets.
           </p>
         </div>
@@ -227,17 +232,16 @@
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-date">2021 - 2024</div>
-          <h3>Licence en Génie Logiciel</h3>
-          <h4>ESSTHS - École Supérieure des Sciences et de la Technologie de Hammam Sousse</h4>
-          <p>
+          <div class="timeline-date" data-translate="edu2-date">2021 - 2024</div>
+          <h3 data-translate="edu2-degree">Licence en Génie Logiciel</h3>
+          <h4 data-translate="edu2-school">ESSTHS - École Supérieure des Sciences et de la Technologie de Hammam Sousse</h4>
+          <p data-translate="edu2-desc">
             Solide base en <strong>développement logiciel</strong>, <strong>bases de données</strong> 
             et <strong>méthodes agiles</strong>. Réalisation de projets académiques et personnels, 
             notamment en <strong>développement web</strong> et en <strong>automatisation de processus</strong>.
           </p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -245,62 +249,57 @@
 <!-- Services Section -->
 <section id="services" class="services">
   <div class="container">
-    <h2 class="section-title">Mes Services</h2>
-    <p class="section-subtitle">
+    <h2 class="section-title" data-translate="services-title">Mes Services</h2>
+    <p class="section-subtitle" data-translate="services-subtitle">
       Je propose des solutions adaptées aux besoins des entreprises et particuliers,
       alliant expertise technique et créativité.
     </p>
     <div class="services-grid">
-
       <div class="service-card">
         <div class="service-icon">💻</div>
-        <h3>Développement Web</h3>
-        <p>
-          Création d’applications web modernes et performantes avec 
+        <h3 data-translate="service1-title">Développement Web</h3>
+        <p data-translate="service1-desc">
+          Création d'applications web modernes et performantes avec 
           <strong>Spring Boot</strong>, <strong>Angular</strong> et <strong>PostgreSQL</strong>.
-          Conception d’interfaces intuitives et ergonomiques adaptées à vos besoins.
+          Conception d'interfaces intuitives et ergonomiques adaptées à vos besoins.
         </p>
       </div>
 
       <div class="service-card">
         <div class="service-icon">⚡</div>
-        <h3>Automatisation & Workflows</h3>
-        <p>
-          Optimisation de vos processus métiers avec <strong>n8n</strong> et intégration d’API.
+        <h3 data-translate="service2-title">Automatisation & Workflows</h3>
+        <p data-translate="service2-desc">
+          Optimisation de vos processus métiers avec <strong>n8n</strong> et intégration d'API.
           Mise en place de workflows intelligents pour gagner en productivité et réduire les tâches manuelles.
         </p>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🤖</div>
-        <h3>Intelligence Artificielle</h3>
-        <p>
-          Développement de solutions IA pour l’<strong>analyse de données</strong>, 
-          la <strong>prédiction</strong> (machine learning) et l’optimisation de la prise de décision.
+        <h3 data-translate="service3-title">Intelligence Artificielle</h3>
+        <p data-translate="service3-desc">
+          Développement de solutions IA pour l'<strong>analyse de données</strong>, 
+          la <strong>prédiction</strong> (machine learning) et l'optimisation de la prise de décision.
         </p>
       </div>
-
-    
 
       <div class="service-card">
         <div class="service-icon">☁️</div>
-        <h3>Déploiement & Cloud</h3>
-        <p>
+        <h3 data-translate="service4-title">Déploiement & Cloud</h3>
+        <p data-translate="service4-desc">
           Mise en ligne de vos applications avec <strong>Docker</strong> et hébergement sur 
           des solutions cloud comme <strong>Render</strong>. 
-          Gestion d’infrastructures évolutives et sécurisées.
+          Gestion d'infrastructures évolutives et sécurisées.
         </p>
       </div>
-
     </div>
   </div>
 </section>
 
   <!-- Projects Section -->
- <!-- Projects Section -->
 <section id="projects" class="projects">
   <div class="container">
-    <h2 class="section-title">Mes Projets</h2>
+    <h2 class="section-title" data-translate="projects-title">Mes Projets</h2>
     <div class="projects-grid">
 
       <!-- Projet 1 : Gestion de Formations -->
@@ -309,14 +308,14 @@
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80" alt="Gestion de formations">
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://github.com/kheliltasnime/web_app_isi" target="_blank" class="project-link">Voir sur GitHub</a>
-              <a href="#" class="project-link" onclick="openModal('modal1')">Détails</a>
+              <a href="https://github.com/kheliltasnime/web_app_isi" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
+              <a href="#" class="project-link" onclick="openModal('modal1')" data-translate="project-details">Détails</a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <h3>Application de Gestion de Formations</h3>
-          <p>Application web complète permettant de gérer des formations, avec une architecture robuste et une interface moderne.</p>
+          <h3 data-translate="project1-title">Application de Gestion de Formations</h3>
+          <p data-translate="project1-desc">Application web complète permettant de gérer des formations, avec une architecture robuste et une interface moderne.</p>
           <div class="project-tech">
             <span class="tech-tag">Java / Spring Boot</span>
             <span class="tech-tag">Angular</span>
@@ -331,14 +330,14 @@
           <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop&q=80" alt="Gestion des réservations">
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://github.com/kheliltasnime/my_angular_springboot_app" target="_blank" class="project-link">Voir sur GitHub</a>
-              <a href="#" class="project-link" onclick="openModal('modal2')">Détails</a>
+              <a href="https://github.com/kheliltasnime/my_angular_springboot_app" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
+              <a href="#" class="project-link" onclick="openModal('modal2')" data-translate="project-details">Détails</a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <h3>Gestion des Réservations d’Équipements et de Salles</h3>
-          <p>Système web intuitif permettant de réserver et suivre l’utilisation des salles et équipements d’une institution.</p>
+          <h3 data-translate="project2-title">Gestion des Réservations d'Équipements et de Salles</h3>
+          <p data-translate="project2-desc">Système web intuitif permettant de réserver et suivre l'utilisation des salles et équipements d'une institution.</p>
           <div class="project-tech">
             <span class="tech-tag">Spring Boot</span>
             <span class="tech-tag">Angular</span>
@@ -353,15 +352,15 @@
           <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&q=80" alt="Crop predictor">
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://github.com/kheliltasnime/crop-predictor" target="_blank" class="project-link">Voir sur GitHub</a>
-              <a href="#" class="project-link" onclick="openModal('modal3')">Détails</a>
+              <a href="https://github.com/kheliltasnime/crop-predictor" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
+              <a href="#" class="project-link" onclick="openModal('modal3')" data-translate="project-details">Détails</a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <h3>Crop Predictor – Prédiction de Cultures</h3>
-          <p>
-            Projet d’<strong>intelligence artificielle</strong> utilisant le machine learning pour recommander le 
+          <h3 data-translate="project3-title">Crop Predictor – Prédiction de Cultures</h3>
+          <p data-translate="project3-desc">
+            Projet d'<strong>intelligence artificielle</strong> utilisant le machine learning pour recommander le 
             meilleur type de culture en fonction de mesures du sol (N, P, K, pH). 
             Objectif : aider les agriculteurs à <strong>maximiser leur rendement</strong> tout en réduisant les coûts.
           </p>
@@ -379,27 +378,26 @@
           <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=400&fit=crop&q=80" alt="Robot suiveur de ligne">
           <div class="project-overlay">
             <div class="project-links">
-              <a href="https://github.com/kheliltasnime/line-follower-robot" target="_blank" class="project-link">Voir sur GitHub</a>
-              <a href="#" class="project-link" onclick="openModal('modal4')">Détails</a>
+              <a href="https://github.com/kheliltasnime/line-follower-robot" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
+              <a href="#" class="project-link" onclick="openModal('modal4')" data-translate="project-details">Détails</a>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <h3>🤖 Robot Suiveur de Ligne avec Détection d’Obstacles</h3>
-          <p>
-            Conception d’un <strong>robot mobile autonome</strong> capable de suivre une ligne noire au sol grâce à 
-            des capteurs infrarouges (TCRT5000) et d’éviter les obstacles via un capteur ultrason (HC-SR04) monté sur 
+          <h3 data-translate="project4-title">🤖 Robot Suiveur de Ligne avec Détection d'Obstacles</h3>
+          <p data-translate="project4-desc">
+            Conception d'un <strong>robot mobile autonome</strong> capable de suivre une ligne noire au sol grâce à 
+            des capteurs infrarouges (TCRT5000) et d'éviter les obstacles via un capteur ultrason (HC-SR04) monté sur 
             un servo-moteur. Un projet combinant électronique et programmation embarquée.
           </p>
           <div class="project-tech">
             <span class="tech-tag">Arduino UNO</span>
             <span class="tech-tag">C/C++</span>
-            <span class="tech-tag">Capteurs IR & Ultrason</span>
-            <span class="tech-tag">Servo-moteur</span>
+            <span class="tech-tag" data-translate="tech-sensors">Capteurs IR & Ultrason</span>
+            <span class="tech-tag" data-translate="tech-servo">Servo-moteur</span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -408,14 +406,14 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h3>Application de Gestion de Formations</h3>
-      <p>Gestion complète des formations : inscriptions, suivi des sessions, gestion des formateurs et reporting.</p>
+      <h3 data-translate="project1-title">Application de Gestion de Formations</h3>
+      <p data-translate="modal1-desc">Gestion complète des formations : inscriptions, suivi des sessions, gestion des formateurs et reporting.</p>
       <ul>
         <li>🔹 Backend : Spring Boot</li>
         <li>🔹 Frontend : Angular</li>
-        <li>🔹 Base de données : PostgreSQL</li>
+        <li>🔹 <span data-translate="modal-database">Base de données</span> : PostgreSQL</li>
       </ul>
-      <a href="https://github.com/kheliltasnime/web_app_isi" target="_blank" class="project-link">Voir sur GitHub</a>
+      <a href="https://github.com/kheliltasnime/web_app_isi" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
     </div>
   </div>
 
@@ -423,14 +421,14 @@
   <div id="modal2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h3>Gestion des Réservations d’Équipements et de Salles</h3>
-      <p>Application web pour gérer réservations, suivi d’utilisation et optimisation des équipements et salles.</p>
+      <h3 data-translate="project2-title">Gestion des Réservations d'Équipements et de Salles</h3>
+      <p data-translate="modal2-desc">Application web pour gérer réservations, suivi d'utilisation et optimisation des équipements et salles.</p>
       <ul>
         <li>🔹 Backend : Spring Boot</li>
         <li>🔹 Frontend : Angular</li>
-        <li>🔹 Base de données : PostgreSQL</li>
+        <li>🔹 <span data-translate="modal-database">Base de données</span> : PostgreSQL</li>
       </ul>
-      <a href="https://github.com/kheliltasnime/my_angular_springboot_app" target="_blank" class="project-link">Voir sur GitHub</a>
+      <a href="https://github.com/kheliltasnime/my_angular_springboot_app" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
     </div>
   </div>
 
@@ -438,14 +436,14 @@
   <div id="modal3" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h3>Crop Predictor – Prédiction de Cultures</h3>
-      <p>Projet IA pour recommander le meilleur type de culture selon les mesures du sol et maximiser le rendement.</p>
+      <h3 data-translate="project3-title">Crop Predictor – Prédiction de Cultures</h3>
+      <p data-translate="modal3-desc">Projet IA pour recommander le meilleur type de culture selon les mesures du sol et maximiser le rendement.</p>
       <ul>
-        <li>🔹 Langage : Python</li>
-        <li>🔹 Librairies : Scikit-learn, Pandas, NumPy</li>
-        <li>🔹 Objectif : Optimisation du rendement agricole</li>
+        <li>🔹 <span data-translate="modal-language">Langage</span> : Python</li>
+        <li>🔹 <span data-translate="modal-libraries">Librairies</span> : Scikit-learn, Pandas, NumPy</li>
+        <li>🔹 <span data-translate="modal-objective">Objectif</span> : <span data-translate="modal3-objective">Optimisation du rendement agricole</span></li>
       </ul>
-      <a href="https://github.com/kheliltasnime/crop-predictor" target="_blank" class="project-link">Voir sur GitHub</a>
+      <a href="https://github.com/kheliltasnime/crop-predictor" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
     </div>
   </div>
 
@@ -453,70 +451,27 @@
   <div id="modal4" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal4')">&times;</span>
-      <h3>Robot Suiveur de Ligne avec Détection d’Obstacles</h3>
-      <p>Robot mobile autonome combinant électronique et programmation embarquée, capable de suivre une ligne et d’éviter les obstacles.</p>
+      <h3 data-translate="project4-title">Robot Suiveur de Ligne avec Détection d'Obstacles</h3>
+      <p data-translate="modal4-desc">Robot mobile autonome combinant électronique et programmation embarquée, capable de suivre une ligne et d'éviter les obstacles.</p>
       <ul>
-        <li>🔹 Microcontrôleur : Arduino UNO</li>
-        <li>🔹 Langage : C/C++</li>
-        <li>🔹 Capteurs : IR (TCRT5000) & Ultrason (HC-SR04)</li>
-        <li>🔹 Servo-moteur pour ajustement direction</li>
+        <li>🔹 <span data-translate="modal-microcontroller">Microcontrôleur</span> : Arduino UNO</li>
+        <li>🔹 <span data-translate="modal-language">Langage</span> : C/C++</li>
+        <li>🔹 <span data-translate="modal-sensors">Capteurs</span> : IR (TCRT5000) & Ultrason (HC-SR04)</li>
+        <li>🔹 <span data-translate="modal4-servo">Servo-moteur pour ajustement direction</span></li>
       </ul>
-      <a href="https://github.com/kheliltasnime/line-follower-robot" target="_blank" class="project-link">Voir sur GitHub</a>
+      <a href="https://github.com/kheliltasnime/line-follower-robot" target="_blank" class="project-link" data-translate="project-github">Voir sur GitHub</a>
     </div>
   </div>
-
 </section>
-
-<!-- JS pour les modales -->
-<script>
-function openModal(id) {
-  document.getElementById(id).style.display = "flex";
-}
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
-</script>
-
-<!-- CSS modales (à ajouter dans styles.css) -->
-<style>
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  align-items: center;
-  justify-content: center;
-}
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  width: 600px;
-  max-width: 90%;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  position: relative;
-}
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 22px;
-  cursor: pointer;
-}
-</style>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Me Contacter</h2>
+      <h2 class="section-title" data-translate="contact-title">Me Contacter</h2>
       <div class="contact-content">
         <div class="contact-info">
-          <h3>Travaillons ensemble</h3>
-          <p>Je suis toujours intéressée par de nouveaux projets et opportunités. N'hésitez pas à me contacter !</p>
+          <h3 data-translate="contact-work-together">Travaillons ensemble</h3>
+          <p data-translate="contact-interested">Je suis toujours intéressée par de nouveaux projets et opportunités. N'hésitez pas à me contacter !</p>
 
           <div class="contact-methods">
             <div class="contact-method">
@@ -536,23 +491,28 @@ function closeModal(id) {
             <div class="contact-method">
               <div class="contact-icon">📍</div>
               <div>
-                <h4>Localisation</h4>
-                <p>Tunis, Tunisie</p>
+                <h4 data-translate="contact-location">Localisation</h4>
+                <p data-translate="contact-location-value">Tunis, Tunisie</p>
               </div>
             </div>
           </div>
         </div>
 
-      <form class="contact-form">
-  <input type="text" name="name" placeholder="Votre nom">
-  <input type="email" name="email" placeholder="Votre email">
-  <input type="text" name="subject" placeholder="Sujet">
-  <textarea name="message" placeholder="Votre message"></textarea>
-  <button type="submit">Envoyer</button>
-</form>
-
-
-
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" name="from_name" data-translate-placeholder="form-name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="from_email" data-translate-placeholder="form-email" placeholder="Votre email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" data-translate-placeholder="form-subject" placeholder="Sujet">
+          </div>
+          <div class="form-group">
+            <textarea name="message" data-translate-placeholder="form-message" placeholder="Votre message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" data-translate="form-submit">Envoyer le message</button>
+        </form>
       </div>
     </div>
   </section>
@@ -562,11 +522,11 @@ function closeModal(id) {
     <div class="container">
       <div class="footer-content">
         <div class="footer-text">
-          <p>&copy; 2024 Portfolio de Tasnime Khelil. Tous droits réservés.</p>
+          <p data-translate="footer-rights">&copy; 2024 Portfolio de Tasnime Khelil. Tous droits réservés.</p>
         </div>
         <div class="social-links">
-          <a href="https://www.linkedin.com/in/tasnime-khelli-80717b185" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/tasnime-khelil-80717b185/" class="social-link">LinkedIn</a>
+          <a href="https://github.com/kheliltasnime" class="social-link">GitHub</a>
         </div>
       </div>
     </div>
