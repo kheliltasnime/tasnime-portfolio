@@ -9,31 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+ 
+</script>
 
- <script>
-    (function(){
-      emailjs.init("G3HpHKXPQDvpbz-KQ"); // remplace par ton public key
-    })();
-
-    function sendEmail(e) {
-      e.preventDefault();
-
-      emailjs.send("service_aoc0dbi", "template_s8xk64r", {
-        title: document.getElementById("title").value,
-        name: document.getElementById("name").value,
-        message: document.getElementById("message").value,
-        from_name: document.getElementById("name").value,
-        from_email: document.getElementById("from_email").value
-      })
-      .then(function(response) {
-        alert("✅ Email envoyé avec succès !");
-        console.log("SUCCESS!", response.status, response.text);
-      }, function(error) {
-        alert("❌ Erreur lors de l’envoi !");
-        console.error("FAILED...", error);
-      });
-    }
-  </script>
 <body>
  <!-- Navigation -->
 <nav class="navbar">
@@ -537,26 +516,48 @@ function closeModal(id) {
       </div>
 
       <!-- FORMULAIRE -->
-    <form id="contact-form" onsubmit="sendEmail(event)">
-    <label>Titre</label><br>
-    <input type="text" id="title" required><br><br>
-
-    <label>Nom</label><br>
-    <input type="text" id="name" required><br><br>
-
-    <label>Email</label><br>
-    <input type="email" id="from_email" required><br><br>
-
-    <label>Message</label><br>
-    <textarea id="message" required></textarea><br><br>
-
-    <button type="submit">Envoyer</button>
-  </form>
+     <form id="contact-form">
+  <input type="text" name="name" placeholder="Votre nom" required>
+  <input type="email" name="from_email" placeholder="Votre email" required>
+  <input type="text" name="title" placeholder="Sujet">
+  <textarea name="message" placeholder="Votre message"></textarea>
+  <button type="submit">Envoyer</button>
+</form>
 
     </div>
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialiser EmailJS
+  emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ remplace par ta clé publique
+
+  // Gestion du formulaire
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value || "Sans sujet";
+    const message = document.getElementById("message").value;
+
+    emailjs.send("service_aoc0dbi", "template_s8xk64r", {
+      title: subject,
+      name: name,
+      message: message,
+      from_name: name,
+      from_email: email,
+    })
+    .then(() => {
+      alert("✅ Message envoyé avec succès !");
+      document.getElementById("contact-form").reset();
+    })
+    .catch(() => {
+      alert("❌ Erreur lors de l’envoi, réessayez.");
+    });
+  });
+</script>
 
 
   <!-- Footer -->
