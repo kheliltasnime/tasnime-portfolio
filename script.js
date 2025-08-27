@@ -356,7 +356,7 @@ const translations = {
     'edu1-degree': 'Cycle d\'Ingénieur en Génie Logiciel',
     'edu1-school': 'Institut Supérieur d\'Informatique (ISI) de l\'Université de La Manouba',
     'edu1-desc': 'Études approfondies en génie logiciel avec un accent sur le développement d\'applications intelligentes.',
-    'edu2-date': '2021 - 2023',
+    'edu2-date': '2021 - 2024',
     'edu2-degree': 'Licence en Sciences de l\'Informatique',
     'edu2-school': 'Institut Supérieur d\'Informatique (ISI) de l\'Université de La Manouba',
     'edu2-desc': 'Formation solide en programmation, algorithmes, structures de données et bases de données.',
