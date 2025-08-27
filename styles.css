@@ -21,6 +21,65 @@
   --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
   --gradient-accent: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
 }
+/* Dans votre styles.css */
+
+/* Variables de thème (si elles ne sont pas déjà là) */
+:root[data-theme="light"] {
+    --body-bg: #f8f9fa;
+    --text-color: #343a40;
+    --heading-color: #212529;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-bg-scrolled: rgba(255, 255, 255, 0.98);
+    --navbar-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --hero-bg: #e0e7ff; /* Exemple pour le thème clair */
+    --primary-color: #6a0dad; /* Violet */
+    --secondary-color: #8a2be2; /* Bleu violet */
+    --link-hover-color: #4b0082; /* Indigo */
+    --btn-bg: #6a0dad;
+    --btn-color: #fff;
+    --btn-hover-bg: #8a2be2;
+    --input-bg: #f2f2f2;
+    --input-border: #ccc;
+    --footer-bg: #343a40;
+    --footer-text-color: #f8f9fa;
+    --icon-color: #6c757d;
+}
+
+:root[data-theme="dark"] {
+    --body-bg: #212529;
+    --text-color: #e2e6ea;
+    --heading-color: #f8f9fa;
+    --navbar-bg: rgba(33, 37, 41, 0.95); /* Plus sombre */
+    --navbar-bg-scrolled: rgba(33, 37, 41, 0.98);
+    --navbar-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    --card-bg: #2d3137;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --hero-bg: #1c2024; /* Exemple pour le thème sombre */
+    --primary-color: #b081eb; /* Violet clair pour le dark mode */
+    --secondary-color: #d1baf4; /* Bleu violet clair */
+    --link-hover-color: #9a6fd1;
+    --btn-bg: #b081eb;
+    --btn-color: #212529;
+    --btn-hover-bg: #d1baf4;
+    --input-bg: #343a40;
+    --input-border: #495057;
+    --footer-bg: #1c2024;
+    --footer-text-color: #e2e6ea;
+    --icon-color: #adb5bd;
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: var(--navbar-bg); /* Utilise la variable du thème */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--navbar-bg-scrolled); /* Utilise la variable du thème pour le défilement */
+    box-shadow: var(--navbar-shadow);
+}
 
 /* Dark theme variables */
 [data-theme="dark"] {
